@@ -720,7 +720,7 @@ static BOOL WQCacheValidateItem(WQCacheItem *item, NSString **reason)
         cell.bar.progress = total ? (float)((double)selected / (double)total) : 0;
         cell.bar.hidden = _scanning && !_items.count;
         cell.statusLabel.text = _status ?: _result
-            ?: [NSString stringWithFormat:@"已在 %lu 个项目%@中选择 %@", wq_size_text(selected), (unsigned long)n, n == 1 ? @"" : @"s"];
+            ?: [NSString stringWithFormat:@"已在 %lu 个项目中选择 %@", (unsigned long)n, wq_size_text(selected)];
         return cell;
     }
     WQCleanerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"item"]

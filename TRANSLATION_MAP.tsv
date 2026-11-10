@@ -251,7 +251,7 @@ The text could not be encoded as UTF-8.	文本无法编码为 UTF-8。
 %lu keys	%lu 个键
 %lu of %lu	%lu / %lu
 %lu of %lu apps	%lu / %lu 个应用
-%@ selected in %lu item%@	已在 %lu 个项目%@中选择 %@
+%@ selected in %lu item%@	已在 %lu 个项目中选择 %@
 %@ · %@ · no identifier	%@ · %@ · 无标识符
 %@ · %llu bytes%@%@	%@ · %llu 字节%@%@
 %@ · mode %o · uid %u	%@ · 模式 %o · uid %u
