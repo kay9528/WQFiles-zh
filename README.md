@@ -1,4 +1,16 @@
-# Worse Query Files
+# Worse Query Files — 汉化版 (Chinese, 0.8-zh1)
+
+> **汉化版说明**：基于上游 [kolbicz/WQFiles](https://github.com/kolbicz/WQFiles)
+> v0.8 的中文翻译。界面文案（按钮、菜单、提示、Plist / 十六进制编辑器、
+> 缓存清理、备份恢复、SQLite 查看器、扫描窗口、排序）已译为简体中文；日志（Log）内容、文件路径、Bundle ID、
+> 技术术语保持英文原文，方便对照和反馈问题。翻译对照表见
+> `TRANSLATION_MAP.tsv`。原作者、worse_query 技术来源与 GPL-3.0 协议不变，
+> 详见下方 Credit and license。
+>
+> Chinese localization of upstream WQ Files v0.8. UI strings are translated
+> to Simplified Chinese; log lines, file paths, bundle IDs and technical terms
+> stay in English. See `TRANSLATION_MAP.tsv` for the full mapping.
+
 
 **WQ Files** is a file browser, app data manager and cache cleaner for iOS 26
 and 27. "WQ" stands for worse_query, the sandbox technique it is built on. It
@@ -172,6 +184,11 @@ fixture builds that do not have a test tree. For a separate output, set
 updater validates the IPA's embedded metadata before atomically replacing
 `source.json`; its version/build arguments must match the artifact, and an
 existing release description is preserved when no new notes are supplied.
+
+This Chinese build is also built by GitHub Actions
+(`.github/workflows/build-ipa.yml`, macOS runner, `./build.sh`), which uploads
+the unsigned `WQFiles.ipa` as a workflow artifact. Version `0.8-zh1`
+(`CFBundleShortVersionString`), shown at the top of the **Log**.
 
 ## Regression tests
 

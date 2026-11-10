@@ -41,11 +41,11 @@ static const NSUInteger kWQSQLiteQueryLimit = 1000;
 static BOOL wq_sqlite_copy(NSString *src, NSString *dst, NSString **error)
 {
     if (![NSFileManager.defaultManager createFileAtPath:dst contents:nil attributes:nil]) {
-        *error = @"cannot create the temporary copy";
+        *error = @"无法创建临时副本";
         return NO;
     }
     NSFileHandle *out = [NSFileHandle fileHandleForWritingAtPath:dst];
-    if (!out) { *error = @"cannot write the temporary copy"; return NO; }
+    if (!out) { *error = @"无法写入临时副本"; return NO; }
     const NSUInteger chunk = 1024 * 1024;
     unsigned long long offset = 0;
     BOOL ok = YES;
@@ -53,13 +53,13 @@ static BOOL wq_sqlite_copy(NSString *src, NSString *dst, NSString **error)
         for (;;) {
             NSString *readError = nil;
             NSData *data = wq_read_range(src, offset, chunk, &readError);
-            if (!data) { *error = readError ?: @"read failed"; ok = NO; break; }
+            if (!data) { *error = readError ?: @"读取失败"; ok = NO; break; }
             if (data.length) [out writeData:data];
             offset += data.length;
             if (data.length < chunk) break;
         }
     } @catch (NSException *exception) {
-        *error = exception.reason ?: @"write failed";
+        *error = exception.reason ?: @"写入失败";
         ok = NO;
     }
     [out closeFile];
@@ -74,7 +74,7 @@ static BOOL wq_sqlite_copy(NSString *src, NSString *dst, NSString **error)
     _dir = [NSTemporaryDirectory() stringByAppendingPathComponent:
             [@"wq-sqlite-" stringByAppendingString:NSUUID.UUID.UUIDString]];
     if (![NSFileManager.defaultManager createDirectoryAtPath:_dir withIntermediateDirectories:YES attributes:nil error:nil]) {
-        *error = @"cannot create a temporary folder";
+        *error = @"无法创建临时文件夹";
         return nil;
     }
     NSString *copy = [_dir stringByAppendingPathComponent:@"db.sqlite"];
@@ -93,7 +93,7 @@ static BOOL wq_sqlite_copy(NSString *src, NSString *dst, NSString **error)
     sqlite3 *db = NULL;
     int rc = sqlite3_open_v2(copy.fileSystemRepresentation, &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_NOMUTEX, NULL);
     if (rc != SQLITE_OK) {
-        *error = db ? @(sqlite3_errmsg(db)) : @"cannot open the database";
+        *error = db ? @(sqlite3_errmsg(db)) : @"无法打开数据库";
         if (db) sqlite3_close(db);
         return nil;
     }
@@ -146,14 +146,14 @@ static NSString *wq_sqlite_value(sqlite3_stmt *stmt, int column, BOOL full)
             const uint8_t *bytes = sqlite3_column_blob(stmt, column);
             int length = sqlite3_column_bytes(stmt, column);
             if (length >= 8 && bytes && memcmp(bytes, "bplist0", 7) == 0)
-                return [NSString stringWithFormat:@"<binary plist, %d bytes>", length];
+                return [NSString stringWithFormat:@"<二进制 plist，%d 字节>", length];
             NSString *hex = bytes ? wq_sqlite_hex(bytes, length, full ? 512 : 16) : @"";
-            return [NSString stringWithFormat:@"<%d bytes> %@", length, hex];
+            return [NSString stringWithFormat:@"<%d 字节> %@", length, hex];
         }
         default: {
             const unsigned char *text = sqlite3_column_text(stmt, column);
             NSString *s = text ? [NSString stringWithUTF8String:(const char *)text] : nil;
-            if (!s) return @"<text not UTF-8>";
+            if (!s) return @"<文本非 UTF-8>";
             if (!full && s.length > 200) s = [[s substringToIndex:200] stringByAppendingString:@"…"];
             return s;
         }
@@ -219,7 +219,7 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
     NSString *value = _values[(NSUInteger)indexPath.section];
     return [UIContextMenuConfiguration configurationWithIdentifier:nil previewProvider:nil
         actionProvider:^UIMenu *(NSArray<UIMenuElement *> *__unused suggested) {
-        return [UIMenu menuWithChildren:@[[UIAction actionWithTitle:@"Copy" image:[UIImage systemImageNamed:@"doc.on.doc"]
+        return [UIMenu menuWithChildren:@[[UIAction actionWithTitle:@"复制" image:[UIImage systemImageNamed:@"doc.on.doc"]
                                                           identifier:nil handler:^(UIAction *__unused a) {
             UIPasteboard.generalPasteboard.string = value;
         }]]];
@@ -289,7 +289,7 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
         if (sqlite3_prepare_v2(snapshot.db, sql.UTF8String, -1, &stmt, NULL) != SQLITE_OK) {
             error = @(sqlite3_errmsg(snapshot.db));
         } else if (!sqlite3_stmt_readonly(stmt)) {
-            error = @"Only read-only statements can run here.";
+            error = @"这里只能运行只读语句。";
         } else {
             int count = sqlite3_column_count(stmt);
             for (int i = 0; i < count; i++) [columns addObject:@(sqlite3_column_name(stmt, i) ?: "?")];
@@ -322,8 +322,8 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
 {
     if (_error || !_columns) return nil;
     NSString *more = _done ? @"" : @"+";
-    if (_limit && _rows.count >= _limit) more = [NSString stringWithFormat:@" (first %lu)", (unsigned long)_limit];
-    return [NSString stringWithFormat:@"%lu%@ rows · %lu columns", (unsigned long)_rows.count, more, (unsigned long)_columns.count];
+    if (_limit && _rows.count >= _limit) more = [NSString stringWithFormat:@"（前 %lu 条）", (unsigned long)_limit];
+    return [NSString stringWithFormat:@"%lu%@ 行 · %lu 列", (unsigned long)_rows.count, more, (unsigned long)_columns.count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -332,7 +332,7 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
         ?: [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"row"];
     UIListContentConfiguration *c = cell.defaultContentConfiguration;
     if (_error || !_rows.count) {
-        c.text = _error ?: @"No rows";
+        c.text = _error ?: @"没有行";
         c.textProperties.color = _error ? UIColor.systemRedColor : UIColor.secondaryLabelColor;
         c.textProperties.numberOfLines = 0;
         cell.contentConfiguration = c;
@@ -363,7 +363,7 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
     if (_error || (NSUInteger)indexPath.row >= _rows.count) return;
     WQSQLiteRowViewController *detail = [[WQSQLiteRowViewController alloc]
         initWithColumns:_columns values:_rows[(NSUInteger)indexPath.row]
-                  title:[NSString stringWithFormat:@"Row %ld", (long)indexPath.row + 1]];
+                  title:[NSString stringWithFormat:@"第 %ld 行", (long)indexPath.row + 1]];
     [self.navigationController pushViewController:detail animated:YES];
 }
 
@@ -381,9 +381,9 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
         [NSFileManager.defaultManager createFileAtPath:out contents:nil attributes:nil];
         NSFileHandle *file = [NSFileHandle fileHandleForWritingAtPath:out];
         sqlite3_stmt *stmt = NULL;
-        if (!file) error = @"cannot create the CSV file";
+        if (!file) error = @"无法创建 CSV 文件";
         else if (sqlite3_prepare_v2(snapshot.db, sql.UTF8String, -1, &stmt, NULL) != SQLITE_OK) error = @(sqlite3_errmsg(snapshot.db));
-        else if (!sqlite3_stmt_readonly(stmt)) error = @"Only read-only statements can run here.";
+        else if (!sqlite3_stmt_readonly(stmt)) error = @"这里只能运行只读语句。";
         else {
             int count = sqlite3_column_count(stmt);
             NSMutableArray *header = [NSMutableArray new];
@@ -401,7 +401,7 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
         [file closeFile];
         dispatch_async(dispatch_get_main_queue(), ^{
             sender.enabled = YES;
-            if (error) { wq_alert(self, @"Cannot export", error); return; }
+            if (error) { wq_alert(self, @"无法导出", error); return; }
             wq_share(self, out, nil);
         });
     });
@@ -449,7 +449,7 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
         [_textView.leadingAnchor constraintEqualToAnchor:g.leadingAnchor constant:8],
         [_textView.trailingAnchor constraintEqualToAnchor:g.trailingAnchor constant:-8],
     ]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Run" style:UIBarButtonItemStyleProminent
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"运行" style:UIBarButtonItemStyleProminent
                                                                              target:self action:@selector(run)];
     [_textView becomeFirstResponder];
 }
@@ -466,17 +466,17 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
         sqlite3_stmt *stmt = NULL;
         const char *tail = NULL;
         if (sqlite3_prepare_v2(snapshot.db, sql.UTF8String, -1, &stmt, &tail) != SQLITE_OK) error = @(sqlite3_errmsg(snapshot.db));
-        else if (!stmt) error = @"Nothing to run.";
-        else if (!sqlite3_stmt_readonly(stmt)) error = @"Only read-only statements (SELECT, read-only PRAGMA, EXPLAIN) can run here.";
+        else if (!stmt) error = @"没有可运行的语句。";
+        else if (!sqlite3_stmt_readonly(stmt)) error = @"这里只能运行只读语句（SELECT、只读 PRAGMA、EXPLAIN）。";
         else if (tail && *tail) {
             NSString *rest = [@(tail) stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
-            if (rest.length) error = @"Run one statement at a time.";
+            if (rest.length) error = @"一次只能运行一条语句。";
         }
-        else if (sqlite3_column_count(stmt) == 0) error = @"This statement returns no rows.";
+        else if (sqlite3_column_count(stmt) == 0) error = @"此语句没有返回任何行。";
         sqlite3_finalize(stmt);
     });
-    if (error) { wq_alert(self, @"Cannot run", error); return; }
-    WQSQLiteRowsViewController *rows = [[WQSQLiteRowsViewController alloc] initWithSnapshot:snapshot sql:sql title:@"Result"
+    if (error) { wq_alert(self, @"无法运行", error); return; }
+    WQSQLiteRowsViewController *rows = [[WQSQLiteRowsViewController alloc] initWithSnapshot:snapshot sql:sql title:@"结果"
                                                                                  exportName:@"query" limit:kWQSQLiteQueryLimit];
     [self.navigationController pushViewController:rows animated:YES];
 }
@@ -582,14 +582,14 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return _tables.count ? @"Tables and views" : nil;
+    return _tables.count ? @"表和视图" : nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     if (!_snapshot) return nil;
-    NSString *wal = _snapshot.copiedWAL ? @" and its -wal file" : @"";
-    return [NSString stringWithFormat:@"Read-only. This is a copy of the database%@ made when it was opened; the app's own file is not changed. Close the app first for an up-to-date copy.", wal];
+    NSString *wal = _snapshot.copiedWAL ? @"及其 -wal 文件" : @"";
+    return [NSString stringWithFormat:@"只读。这是打开时复制的数据库%@副本；应用自己的文件不会被修改。如需最新副本，请先关闭该应用。", wal];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -599,13 +599,13 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
     UIListContentConfiguration *c = [UIListContentConfiguration valueCellConfiguration];
     cell.accessoryType = UITableViewCellAccessoryNone;
     if (_loading) {
-        c.text = @"Copying and opening…";
+        c.text = @"正在复制并打开…";
     } else if (_error) {
-        c.text = [@"Cannot open this database: " stringByAppendingString:_error];
+        c.text = [@"无法打开此数据库：" stringByAppendingString:_error];
         c.textProperties.color = UIColor.systemRedColor;
         c.textProperties.numberOfLines = 0;
     } else if (!_tables.count) {
-        c.text = @"No tables";
+        c.text = @"没有表";
         c.textProperties.color = UIColor.secondaryLabelColor;
     } else {
         NSDictionary *table = _tables[(NSUInteger)indexPath.row];
@@ -613,7 +613,7 @@ static NSString *wq_sqlite_csv_field(sqlite3_stmt *stmt, int column)
         c.text = table[@"name"];
         c.image = [UIImage systemImageNamed:view ? @"eye" : @"tablecells"];
         NSNumber *count = _counts[table[@"name"]];
-        c.secondaryText = view ? @"view" : (count ? [NSString stringWithFormat:@"%@ rows", count] : @"…");
+        c.secondaryText = view ? @"视图" : (count ? [NSString stringWithFormat:@"%@ 行", count] : @"…");
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     cell.contentConfiguration = c;
