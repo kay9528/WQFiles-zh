@@ -1,4 +1,16 @@
-# Worse Query Files
+# Worse Query Files — 汉化版 (Chinese, 0.7-zh1)
+
+> **汉化版说明**：基于上游 [kolbicz/WQFiles](https://github.com/kolbicz/WQFiles)
+> v0.7 的中文翻译。界面文案（按钮、菜单、提示、Plist / 十六进制编辑器、
+> 缓存清理、备份恢复）已译为简体中文；日志（Log）内容、文件路径、Bundle ID、
+> 技术术语保持英文原文，方便对照和反馈问题。翻译对照表见
+> `TRANSLATION_MAP.tsv`。原作者、worse_query 技术来源与 GPL-3.0 协议不变，
+> 详见下方 Credit and license。
+>
+> Chinese localization of upstream WQ Files v0.7. UI strings are translated
+> to Simplified Chinese; log lines, file paths, bundle IDs and technical terms
+> stay in English. See `TRANSLATION_MAP.tsv` for the full mapping.
+
 
 **WQ Files** is a file browser, app data manager and cache cleaner for iOS 26
 and 27. "WQ" stands for worse_query, the sandbox technique it is built on. It
@@ -151,6 +163,11 @@ entitlement (`group.cz.kolbi.wqfiles`). The technique needs an App Group, so
 re-sign with a tool that keeps one; the app uses whichever group it actually
 receives and shows it at the top of the **Log**. If it reports "No App Group",
 the signer dropped it.
+
+This Chinese build is also built by GitHub Actions
+(`.github/workflows/build-ipa.yml`, macOS runner, `./build.sh`), which uploads
+the unsigned `WQFiles.ipa` as a workflow artifact. Version `0.7-zh1`
+(`CFBundleShortVersionString`), shown at the top of the **Log**.
 
 The deployment minimum is iOS 26.0. Builds first run the host regression suite,
 then stage and validate the archive, metadata, signature and App Group before

@@ -25,7 +25,7 @@ NSString *wq_device_line(void)
         @"iPhone18,3": @"iPhone 17", @"iPhone18,4": @"iPhone Air",
     };
     NSString *marketing = names[machine];
-    NSString *model = marketing ? [NSString stringWithFormat:@"%@ (%@)", marketing, machine] : machine;
+    NSString *model = marketing ? [NSString stringWithFormat:@"%@（%@）", marketing, machine] : machine;
     NSString *ver = UIDevice.currentDevice.systemVersion;
     return buildStr ? [NSString stringWithFormat:@"%@ · iOS %@ (%@)", model, ver, buildStr]
                     : [NSString stringWithFormat:@"%@ · iOS %@", model, ver];

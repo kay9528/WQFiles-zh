@@ -1,0 +1,594 @@
+# WQFiles 0.7 汉化映射（制表符分隔：英文原文 -> 中文）
+# 只翻译界面可见文案；日志、路径、Bundle ID、plist 键名、SF Symbol 名、文件名一律不动。
+# 占位符 %@ %lu %lld %d %u %o %x %s 和 \n 必须原样保留。
+# 0.5 的 384 条映射全部复用；以下新增 197 条为 0.7 新增文案。
+Apps	应用
+App Data	应用数据
+App Groups	应用组
+Extension Data	扩展数据
+Internal Daemons	系统守护进程
+System Data	系统数据
+System Groups	系统组
+Cache Cleaner	缓存清理
+Crash Logs	崩溃日志
+Log	日志
+Tools	工具
+Containers	容器
+App Backups	应用备份
+File Backups	文件备份
+Back Up Data	备份数据
+Back Up, Then Clear	先备份，再清空
+Clear Data…	清空数据…
+Clear Without Backup	不备份直接清空
+Restore	恢复
+Restore Backup (%@)	恢复备份（%@）
+Restore a Backup… (%lu)	恢复备份…（%lu）
+Restore %@?	恢复 %@？
+Restore to Original Location	恢复到原始位置
+Restore which backup?	恢复哪一个备份？
+Restore failed	恢复失败
+Restored	已恢复
+Restoring %@…	正在恢复 %@…
+Restore recovery	恢复修复
+Share Latest Backup (AirDrop…)	分享最新备份（隔空投送…）
+Share as ZIP (AirDrop…)	以 ZIP 分享（隔空投送…）
+Share	分享
+Import File	导入文件
+New Folder	新建文件夹
+New Item	新建项目
+Rename	重命名
+Delete	删除
+Create	创建
+Save	保存
+Cancel	取消
+Discard	丢弃
+Discard Changes	丢弃更改
+Discard changes?	丢弃更改？
+Keep Editing	继续编辑
+Done Reordering	完成排序
+Reorder Items	重新排序
+Add	添加
+Set	设置
+Go	前往
+Go to Path	前往路径
+Go to Path…	前往路径…
+Go to Offset	前往偏移
+Go to Offset…	前往偏移…
+Find	查找
+Find Hex Bytes	查找十六进制
+Find Hex Bytes…	查找十六进制…
+Find Text	查找文本
+Find Text…	查找文本…
+Open	打开
+Open As	打开方式
+Open as XML Text	以 XML 文本打开
+Open in Hex Viewer	在十六进制查看器中打开
+Open Data Folder	打开数据文件夹
+Open System Group	打开系统组
+Show App Data in File Browser	在文件浏览器中显示应用数据
+Show Caches in File Browser	在文件浏览器中显示缓存
+Show Crash Logs in File Browser	在文件浏览器中显示崩溃日志
+Show tmp in File Browser	在文件浏览器中显示 tmp
+Copy Path	复制路径
+Copy Container Path	复制容器路径
+Copy Identifier	复制标识符
+Path copied	路径已复制
+Plist Editor	Plist 编辑器
+Hex Viewer	十六进制查看器
+Text / Image	文本 / 图片
+Select All	全选
+Select None	全不选
+Select Large Caches (50 MB+)	选择大缓存（50 MB 以上）
+Clean	清理
+Clean caches?	清理缓存？
+Cleaning	正在清理
+Cleaning %lu of %lu: %@	正在清理 %lu / %lu：%@
+Cleaning…	正在清理…
+Clear %@?	清空 %@？
+Clearing %@…	正在清空 %@…
+Data cleared	数据已清空
+Not cleared	未清空
+Partly cleared	已部分清空
+Freed %@.%@	已释放 %@。%@
+Freed about %@.%@ Open %@ to start fresh.	已释放约 %@。%@ 打开 %@ 重新开始。
+Loading…	正在加载…
+Scanning	正在扫描
+Scanning…	正在扫描…
+Scanning inodes…	正在扫描 inode…
+Scanning inodes… %lld%% · %lu found	正在扫描 inode…%lld%% · 已找到 %lu 个
+Searching…	正在搜索…
+Finding apps…	正在查找应用…
+Finding apps… %lld%%	正在查找应用…%lld%%
+Finding %@… %lld%%	正在查找 %@…%lld%%
+Measuring %@ %lu of %lu…	正在测算 %@ %lu / %lu…
+Measuring %lu/%lu…	正在测算 %lu / %lu…
+Preparing…	正在准备…
+Backing up %@…	正在备份 %@…
+Backed up	已备份
+Backup failed	备份失败
+Backup failed, nothing was deleted	备份失败，未删除任何内容
+Backup of the current file failed, nothing was written	当前文件备份失败，未写入任何内容
+Saved to AppBackups/%@/%@	已保存到 AppBackups/%@/%@
+Save changes?	保存更改？
+Save failed	保存失败
+Save in progress	正在保存
+Cannot save	无法保存
+Cannot create folder	无法创建文件夹
+Cannot create the backup folder	无法创建备份文件夹
+Cannot create the destination folder	无法创建目标文件夹
+Cannot create the restore recovery folder	无法创建恢复修复文件夹
+Cannot delete	无法删除
+Cannot encode	无法编码
+Cannot finish the backup (errno %d)	无法完成备份（errno %d）
+Cannot list this folder	无法列出此文件夹
+Cannot open this file.	无法打开此文件。
+Cannot open this folder	无法打开此文件夹
+Cannot read the source folder	无法读取源文件夹
+Cannot read this file.	无法读取此文件。
+Cannot read this file: %@	无法读取此文件：%@
+Cannot rename	无法重命名
+Cannot share	无法分享
+Cannot write the backup manifest	无法写入备份清单
+Cannot write the restore recovery journal	无法写入恢复修复记录
+Cannot mark the restore recovery journal as committed	无法将恢复修复记录标记为已提交
+Cannot remove the restore recovery journal	无法删除恢复修复记录
+Cannot access %@	无法访问 %@
+Cannot mark the restore recovery journal as committed	无法将恢复修复记录标记为已提交
+An item with that name already exists	已存在同名项目
+Invalid name	名称无效
+Key exists	键已存在
+Not a valid value	不是有效值
+Not a valid property list	不是有效的属性列表
+Not a property list: %@	不是属性列表：%@
+Not a regular file	不是常规文件
+Not changed	未更改
+Not found	未找到
+Not restored	未恢复
+Out of memory	内存不足
+Unknown error	未知错误
+Write failed	写入失败
+Read failed: %@	读取失败：%@
+Copy failed	复制失败
+Import failed	导入失败
+Could not create a temporary export folder	无法创建临时导出文件夹
+Could not create the ZIP	无法创建 ZIP
+Could not empty %@	无法清空 %@
+Could not remove current %@	无法删除当前 %@
+Some files couldn't be written	部分文件无法写入
+Nothing to find	没有要查找的内容
+Nothing was saved: %@	未保存任何内容：%@
+Only the owner may read this file.	只有文件所有者可以读取此文件。
+Only empty folders can be deleted	只能删除空文件夹
+Only empty folders can be deleted.	只能删除空文件夹。
+This folder cannot be listed on this iOS version. Known names that exist are shown; tap + to try another name.	此文件夹无法在此 iOS 版本下列出。已显示已知存在的名称；点 + 可尝试其他名称。
+Container enumeration failed. Check the App Group and see Log.	容器枚举失败。请检查 App Group 并查看日志。
+No app containers were found. Check the App Group and see Log.	未找到应用容器。请检查 App Group 并查看日志。
+Sandbox access is unavailable. Check the App Group and see Log; only the container path can be copied.	沙盒访问不可用。请检查 App Group 并查看日志；只能复制容器路径。
+This app needs an App Group to reach other folders. Re-sign it with a tool that keeps the App Group entitlement.	此应用需要 App Group 才能访问其他文件夹。请用保留 App Group 权限的工具重新签名。
+No App Group	没有 App Group
+Access unavailable · %@	访问不可用 · %@
+Overwritten and deleted files are copied to Backups first (also visible in the Files app). Long-press a backup to restore it.	被覆盖和删除的文件会先复制到“备份”中（在“文件”应用里也能看到）。长按备份可恢复。
+Tap an app to back up, restore or clear its data. Close the app first (swipe it away in the app switcher). 	点按应用可备份、恢复或清空其数据。请先关闭该应用（在应用切换器中上滑关闭）。
+Clears each app's Library/Caches and tmp. Apps rebuild their caches as you use them; some keep 	清理每个应用的 Library/Caches 和 tmp。使用应用时缓存会重新生成；有些应用会保留
+Deletes everything in the app's Documents, Library and tmp, like a fresh install. 	删除应用的 Documents、Library 和 tmp 中的全部内容，如同全新安装。
+Replaces the app's current Documents and Library with the backup from %@. 	用 %@ 的备份替换应用当前的 Documents 和 Library。
+The backup did not complete, so nothing was deleted.	备份未完成，因此未删除任何内容。
+The backup is empty. Nothing was changed.	备份为空。未更改任何内容。
+The backup's %@ can't be read. Nothing was changed.	备份的 %@ 无法读取。未更改任何内容。
+The container identifier is unavailable. Backup, restore and clear are disabled for this entry.	容器标识符不可用。此条目的备份、恢复和清空已禁用。
+The current data couldn't be backed up first (%@). Nothing was changed.	当前数据无法先备份（%@）。未更改任何内容。
+The edited property list is not valid.	编辑后的属性列表无效。
+The file changed after it was opened. Your edits were not written; reopen it and compare the changes.	文件在打开后已被更改。你的编辑未写入；请重新打开并对比更改。
+The file changed while it was being read. Open it again.	文件在读取时已被更改。请重新打开。
+The text could not be encoded as UTF-8.	文本无法编码为 UTF-8。
+There is already a key named \"%@\".	已存在名为“%@”的键。
+An interrupted restore of %@ was recovered from its safety backup.	%@ 的一次中断恢复已从安全备份中找回。
+An interrupted restore was found, but its recovery journal or safety backup is invalid. See Log.	发现一次中断的恢复，但其恢复记录或安全备份无效。请查看日志。
+Automatic recovery of %@ failed: %@. The safety backup is %@; see Log.	%@ 的自动恢复失败：%@。安全备份位于 %@；请查看日志。
+Open %@ to use the restored data. The data from before is kept as backup %@.	打开 %@ 即可使用恢复的数据。之前的数据已保留为备份 %@。
+Write this backup back to\n%@?\n\nIf a file is there now, it is backed up first.	要把此备份写回\n%@？\n\n如果那里已有文件，会先备份。
+Delete \"%@\"?	删除“%@”？
+Delete the cache and temp files of %lu item%@, about %@? This cannot be undone.	删除 %lu 个项目%@的缓存和临时文件，约 %@？此操作无法撤销。
+Search apps	搜索应用
+Search names and bundle IDs	搜索名称和 Bundle ID
+Search this folder	搜索此文件夹
+Searches the saved file forward from the top of the screen.	从屏幕顶部开始，在已保存的文件中向后搜索。
+Type of the new value	新值的类型
+Rename Key	重命名键
+Key	键
+Name	名称
+Edit	编辑
+Home	首页
+%@\n\nThis method only opens containers. Use App Data, App Groups, 	%@\n\n此方法仅打开容器。请使用“应用数据”“应用组”
+Extension Data, Internal Daemons or System Groups for the folders inside /private/var.	“扩展数据”“系统守护进程”或“系统组”来打开 /private/var 内的文件夹。
+offline content (music, maps, downloads) there and will download it again. No backup is kept.	离线内容（音乐、地图、下载）也放在那里，删除后会重新下载。不保留备份。
+Logins, settings and offline content are lost. Close the app first.	登录信息、设置和离线内容将会丢失。请先关闭该应用。
+Dictionary	字典
+Array	数组
+String	字符串
+Number	数字
+Boolean	布尔
+Date	日期
+Data	数据
+Real	实数
+Binary	二进制
+YES	是
+NO	否
+Whole number	整数
+Hex (0x1a2b) or decimal	十六进制（0x1a2b）或十进制
+ISO 8601, e.g. 2026-11-09T15:00:00Z	ISO 8601，例如 2026-11-09T15:00:00Z
+Enter some text.	请输入文本。
+Enter hex bytes, e.g. de ad be ef.	请输入十六进制字节，例如 de ad be ef。
+Enter exactly %lu bytes in hex.	请恰好输入 %lu 个字节的十六进制。
+Hex bytes, e.g. 01 ab ff	十六进制字节，例如 01 ab ff
+Bytes at 0x%llx	0x%llx 处的字节
+Go to Offset	前往偏移
+Overwrite these %lu bytes (hex). The file size stays the same.	覆盖这 %lu 个字节（十六进制）。文件大小保持不变。
+Your byte changes have not been saved.	你的字节更改尚未保存。
+Your edits to this property list have not been saved.	你对此属性列表的编辑尚未保存。
+Your text changes have not been saved.	你的文本更改尚未保存。
+Wait for the current save to finish before leaving or making more changes.	请等待当前保存完成后再离开或继续更改。
+Wait for the save to finish before leaving or changing these edits.	请等待保存完成后再离开或更改这些编辑。
+The file changed after it was opened. Your edits were not written; reopen it and compare the changes.	文件在打开后已被更改。你的编辑未写入；请重新打开并对比更改。
+Data over 4 KB can't be edited in this editor.	超过 4 KB 的数据无法在此编辑器中编辑。
+Too large to edit here	太大，无法在此编辑
+A change lies past the end of the file	更改超出了文件末尾
+No match after offset 0x%llx.	在偏移 0x%llx 之后没有匹配项。
+Check the XML.	请检查 XML。
+The text could not be encoded as UTF-8.	文本无法编码为 UTF-8。
+%@ property list · read only	%@ 属性列表 · 只读
+%@ property list. Tap a value to edit it, swipe to delete or rename, + to add.	%@ 属性列表。点按值可编辑，左滑可删除或重命名，点 + 可添加。
+%@ is overwritten in place (%@ format). The current version is backed up first.	%@ 将原地覆盖（%@ 格式）。当前版本会先备份。
+%@ will be overwritten in place. The current version is backed up to Backups first.	%@ 将原地覆盖。当前版本会先备份到“备份”。
+%lu bytes in %@ are overwritten in place. The current file is backed up first.	%@ 中的 %lu 个字节将被原地覆盖。当前文件会先备份。
+%lu bytes · %@	%lu 字节 · %@
+%@ already exists. It is backed up before being replaced.	%@ 已存在。替换前会先备份。
+%@ backups	%@ 个备份
+%lu apps and extensions	%lu 个应用和扩展
+%lu apps · %@ of app data	%lu 个应用 · 应用数据 %@ 
+%lu containers · %lu with limited access or no identifier. See Log.	%lu 个容器 · 其中 %lu 个访问受限或无标识符。请查看日志。
+%lu items	%lu 个项目
+%lu keys	%lu 个键
+%lu of %lu	%lu / %lu
+%lu of %lu apps	%lu / %lu 个应用
+%@ selected in %lu item%@	已在 %lu 个项目%@中选择 %@
+%@ · %@ · no identifier	%@ · %@ · 无标识符
+%@ · %llu bytes%@%@	%@ · %llu 字节%@%@
+%@ · mode %o · uid %u	%@ · 模式 %o · uid %u
+%@ · %@	%@ · %@
+%@ (%@)	%@（%@）
+%@ %@	%@ %@
+Unknown container (%@)	未知容器（%@）
+(empty)	（空）
+(no label)	（无标签）
+A folder or file path	文件夹或文件路径
+Search this folder	搜索此文件夹
+Search names and bundle IDs	搜索名称和 Bundle ID
+Search apps	搜索应用
+WQ Files by kolbicz	WQ 文件 · 作者 kolbicz
+Sandbox escape: worse_query by @forcequitOS	沙盒逃逸：worse_query，作者 @forcequitOS
+Settings	设置
+Camera	相机
+Photos	照片
+Mail	邮件
+Messages	信息
+Phone	电话
+Music	音乐
+Maps	地图
+Notes	备忘录
+Calendar	日历
+Clock	时钟
+Weather	天气
+Calculator	计算器
+Compass	指南针
+Contacts	通讯录
+FaceTime	FaceTime 通话
+Health	健康
+Reminders	提醒事项
+Stocks	股市
+Podcasts	播客
+Books	图书
+News	新闻
+Games	游戏
+Game Center	游戏中心
+Fitness	健身
+Freeform	无边记
+Shortcuts	快捷指令
+Translate	翻译
+Tips	提示
+Voice Memos	语音备忘录
+Magnifier	放大器
+Measure	测距仪
+Wallet	钱包
+Passwords	密码
+Find My	查找
+TV	电视
+Files	文件
+Home	首页
+AirDrop	隔空投送
+Apple Cash Stickers	Apple Cash 贴纸
+Apple Media Services	Apple Media Services
+Apple Pay	Apple Pay
+Apple Support	Apple 支持
+Apple TV Setup	Apple TV 设置
+App Store	App Store
+Apple Store	Apple Store
+Car Radio	车载收音机
+CarPlay Wallpaper	CarPlay 墙纸
+Tire Pressure	胎压
+Photo Wallpaper	照片墙纸
+Wallpaper	墙纸
+Wallpaper Collections	墙纸精选
+Wallpaper (Mercury)	墙纸（Mercury）
+Widget Snapshots	小组件快照
+Widgets	小组件
+Screen Time	屏幕使用时间
+Screenshots	截屏
+Print Center	打印中心
+Printing	打印
+Privacy Prompts	隐私提示
+Content Filter	内容过滤
+Restrictions	访问限制
+Authentication	验证
+Account Sign-In	账户登录
+Apple Account	Apple 账户
+Companion	配对助手
+Companion Setup	配对设置
+New Device Setup	新设备设置
+Remote Setup	远程设置
+Diagnostics	诊断
+Enhanced Logging	增强日志
+Hearing	听力
+Keyboard	键盘
+Headphones	耳机
+Wi-Fi Login	Wi-Fi 登录
+Call Screen	来电屏幕
+Message Compose	信息编写
+Messages Alerts	信息提醒
+Music Recognition	音乐识别
+Shazam	Shazam 识曲
+Spotlight	聚焦搜索
+Siri	Siri
+Voice Assistant	语音助手
+Smart Card	智能卡
+Before restore	恢复前
+ (older, unverified)	（旧版，未验证）
+ · backed up	 · 已备份
+%@\n%@ of data	%@\n%@ 数据
+see Log	请查看日志
+ Some items could not be removed (see Log).	 部分文件无法删除（请查看日志）。
+\n\nThis backup was made by an older WQ Files that couldn't tell whether it was complete.	\n\n此备份由旧版 WQ Files 创建，无法确认其是否完整。
+The restore recovery journal is unreadable	恢复修复记录无法读取
+The restore finished, but its recovery journal could not be cleared (%@)	恢复已完成，但其恢复记录无法清除（%@）
+ Recovery will run again at the next launch because the journal could not be removed.	 下次启动时将再次运行恢复，因为无法删除该记录。
+ Recovery will run again at the next launch.	 下次启动时将再次运行恢复。
+%@, and putting the previous data back also failed (%@). It is in backup %@; see the Log.%@	%@，但恢复之前的数据也失败了（%@）。数据在备份 %@ 中；请查看日志。%@
+cache %@ · temp %@	缓存 %@ · 临时 %@
+ · Caches	 · 缓存
+The current data is backed up first, and put back if anything fails. Close the app first.%@	当前数据会先备份，失败时再恢复。请先关闭该应用。%@
+This file belongs to %@ (mode %o) and only its owner may %@ it. 	此文件属于 %@（模式 %o），只有其所有者可以%@它。
+ · %lu changed	 · 已更改 %lu 处
+ · Saving…	 · 正在保存…
+Find iPhone	查找 iPhone
+Assistive Access Camera	辅助访问相机
+Assistive Access Photos	辅助访问照片
+App Store Sheets	App Store 表单
+Media Picker	媒体选择器
+Safari View	Safari 视图
+Font Install	字体安装
+Continuity Markup	连续互通标记
+iCloud Sharing	iCloud 共享
+Quick Note	快速备忘录
+Data Detectors	数据检测器
+Accessory Source	配件来源
+Code Scanner	扫码器
+Wallet Sheets	钱包表单
+Image Playground	影像乐园
+Item %ld	项目 %ld
+Expected: %@	应为：%@
+Compressing the folder	正在压缩文件夹
+Cannot read this file.\n\n%@	无法读取此文件。\n\n%@
+\n… (only the beginning is shown)\n	\n…（仅显示开头）\n
+NO TOKEN	无令牌
+symlink · 	软链接 · 
+%@\n\nOnly empty folders can be deleted.	%@\n\n只能删除空文件夹。
+%@\n\nA copy is kept in Backups.	%@\n\n副本保留在“备份”中。
+Replace existing file?	替换已有文件？
+
+ · tmp	 · 临时文件
+Cannot open this item	无法打开此项目
+Crash Logs · access limited	崩溃日志 · 访问受限
+Crash Logs · osanalytics	崩溃日志 · osanalytics
+Delete Backup…	删除备份…
+Delete backup?	删除备份？
+Delete backups?	删除备份？
+Done	完成
+Not cleanable	无法清理
+Nothing to select	没有可选项
+Only complete backup folders can be selected here.	只能选择完整的备份文件夹。
+Reclaimable	可回收
+Replace	替换
+Replaces the app's current Documents and Library with the backup from %@; tmp is left untouched. 	用 %@ 的备份替换应用当前的 Documents 和 Library；tmp 保持不变。
+Select	选择
+Share in progress	正在分享
+Stop	停止
+Symbolic link	软链接
+The file has no verified version snapshot. Reopen it before saving.	该文件没有已验证的版本快照，请重新打开后再保存。
+Wait for the current share to finish before starting another.	请等待当前分享完成后再开始下一个。
+cache %@ · temp %@%@	缓存 %@ · 临时 %@%@
+ %@. Keep the app closed and try again.	 %@。请保持应用关闭，然后重试。
+ Close running apps first.	 请先关闭正在运行的应用。
+ The recovery journal is committed and will be cleaned up at the next launch.	 恢复记录已提交，将在下次启动时清理。
+ · access limited	 · 访问受限
+ · about %.0f min left	 · 还剩约 %.0f 分钟
+ · less than 2 min left	 · 剩余不到 2 分钟
+%@ Some selected backups may still exist.	%@。部分选中的备份可能仍然存在。
+%@ appeared after the scan	%@ 在扫描后出现
+%@ changed after the scan	%@ 在扫描后发生了变化
+%@ has unsafe path ancestry	%@ 的路径层级不安全
+%@ is not a directory	%@ 不是目录
+%@ no longer has the scanned container identity	%@ 不再具有扫描到的容器标识
+%@ of data	数据 %@
+%@ property list · %@	%@ 属性列表 · %@
+%@ · read only	%@ · 只读
+%@, about %@? This cannot be undone. Close the selected apps first; you can stop between items.	%@，约 %@？此操作无法撤销。请先关闭选中的应用；你可以在处理项目之间随时停止。
+%@. Nothing was changed; the safety backup was retained at %@ for manual recovery.	%@。未做任何更改；安全备份已保留在 %@，可手动恢复。
+%@. The previous data was put back.%@	%@。之前的数据已恢复。%@
+%@\n\nRemoves the symbolic link only; its target is not changed.	%@\n\n仅删除软链接本身；其目标不受影响。
+%@\n\nThis removes every backup for this app. It cannot be undone.	%@\n\n这将删除该应用的所有备份，且无法撤销。
+%@\n\nThis removes the selected backup. It cannot be undone.	%@\n\n这将删除选中的备份，且无法撤销。
+%@\n\nThis special file is removed; no backup is kept.	%@\n\n将删除此特殊文件，不保留备份。
+%lu cache tree measurement%@ was limited	%lu 个缓存树测量%@受限
+%lu container enumeration%@ failed	%lu 个容器枚举%@失败
+%lu container%@ had limited access	%lu 个容器%@访问受限
+%lu container%@ had no identifier or identity	%lu 个容器%@没有标识符或身份信息
+%lu containers · %lu with limited access, identity, size, or no identifier. See Log.	%lu 个容器 · 其中 %lu 个访问受限、身份、大小或无标识符。请查看日志。
+; %lu removed since the last scan	; 自上次扫描以来已删除 %lu 个
+A copy root changed during copying	复制过程中复制源发生了变化
+An interrupted restore of %@ was recovered, but its journal could not be committed (%@). It will be checked again at the next launch.	已恢复 %@ 的中断还原，但其记录无法提交（%@），下次启动时将再次检查。
+An interrupted restore of %@ was recovered. Its committed journal will be cleaned up at the next launch (%@).	已恢复 %@ 的中断还原，其已提交的记录将在下次启动时清理（%@）。
+An interrupted restore was found with an unknown recovery state. The journal was retained for manual recovery.	发现一次中断还原，恢复状态未知，记录已保留以便手动恢复。
+An interrupted restore was found, but its recovery journal is invalid. The journal was retained for manual recovery%@.	发现一次中断还原，但其恢复记录无效，记录已保留以便手动恢复%@。
+Backup copy failed.	备份复制失败。
+Backup of the current file failed, nothing was written: %@	当前文件备份失败，未写入任何内容：%@
+Backup storage cannot be modified through the file browser.	无法通过文件浏览器修改备份存储。
+Backup storage cannot be overwritten or deleted through the file browser.	无法通过文件浏览器覆盖或删除备份存储。
+Backup storage cannot be renamed through the file browser.	无法通过文件浏览器重命名备份存储。
+Cannot allocate a backup name.	无法分配备份名称。
+Cannot delete backup	无法删除备份
+Cannot delete backups	无法删除备份
+Cannot hash the staged backup part	无法计算暂存备份部分的哈希值
+Cannot inspect the backup manifest (errno %d)	无法检查备份清单（errno %d）
+Cannot inspect the copy source	无法检查复制源
+Cannot list this folder. Container enumeration failed; see Log.	无法列出此文件夹。容器枚举失败；请查看日志。
+Cannot locate the app backup folder	无法找到应用备份文件夹
+Cannot read %@	无法读取 %@
+Cannot remove the completed restore journal	无法删除已完成的还原记录
+Cannot safely open distinct source and destination folders	无法安全地打开不同的源文件夹和目标文件夹
+Cannot save safely	无法安全保存
+Clean cancelled: %@. Scan again before retrying.	清理已取消：%@。请重新扫描后再试。
+Clean stopped: %@. Scan again before retrying.	清理已停止：%@。请重新扫描后再试。
+Close failed: %@. Backup: %@	关闭失败：%@。备份：%@
+Could not establish a stable file version. Open it again.	无法确定稳定的文件版本。请重新打开。
+Could not remove a backup.	无法删除备份。
+Could not remove everything inside the backup.	无法删除备份中的全部内容。
+Could not restore %@	无法恢复 %@
+Data values are limited to 4 KB in this editor.	此编辑器中的数据值上限为 4 KB。
+Delete Crash Logs	删除崩溃日志
+Delete the selected cache targets	删除选中的缓存目标
+Deletes selected Crash Logs. This cannot be undone. No backup is kept.	删除选中的崩溃日志。此操作无法撤销，且不保留备份。
+Destination is not a regular file	目标不是常规文件
+Enter a complete non-negative decimal value or a 0x-prefixed hexadecimal value.	请输入一个完整的非负十进制值或以 0x 开头的十六进制值。
+Enter an offset from 0x0 through 0x%llx.	请输入 0x0 到 0x%llx 之间的偏移量。
+Hex input is limited to 16 KB in this editor.	此编辑器中的十六进制输入上限为 16 KB。
+Invalid copy path	复制路径无效
+Invalid file path	文件路径无效
+Invalid folder path	文件夹路径无效
+Invalid offset	偏移量无效
+Keyed-archive references are read-only in this editor. Edit the archived data through its owning key instead.	此编辑器中键控归档引用为只读。请通过其所属键编辑归档数据。
+No %@ container%@ found.	未找到 %@ 容器%@。
+No app containers were found. Refresh, and check Log for the enumeration reason.	未找到应用容器。请刷新，并查看日志中的枚举原因。
+Not enough free space for a full backup copy	可用空间不足，无法完整复制备份
+Offset out of range	偏移量超出范围
+Offset unavailable	偏移量不可用
+On iOS 26, System Data and System Groups can't be reached (worse_query covers them on iOS 27 only), and Internal Daemons need a scan of every file id: the first one can take most of an hour on a well-used device, later ones only check new files.	在 iOS 26 上无法访问系统数据和系统组（worse_query 仅在 iOS 27 上覆盖它们），内部守护进程需要扫描每一个文件 ID：首次扫描在常用设备上可能需要近一个小时，之后只检查新增文件。
+Only a complete backup unit can be deleted here.	此处只能删除完整的备份单元。
+Only regular files can be shared.	只能分享常规文件。
+Only regular files can be viewed.	只能查看常规文件。
+Open %@ to use the restored Documents and Library. The data from before is kept as backup %@; tmp was not changed. Keep the app closed during this operation.%@	打开 %@ 以使用已恢复的 Documents 和 Library。之前的数据已保留为备份 %@；tmp 未更改。在此操作期间请保持应用关闭。%@
+Read-only format	只读格式
+Reading app names…	正在读取应用名称…
+Reading containers… %lu of %lu	正在读取容器…%lu / %lu
+Reference value	引用值
+Save unavailable	无法保存
+Saved contents could not be verified; possible concurrent modification	无法验证已保存的内容；可能存在并发修改
+Scalar values are limited to 64 KB in this editor.	此编辑器中的标量值上限为 64 KB。
+Scan incomplete: %@. See Log.	扫描未完成：%@。请查看日志。
+Scanning inodes… %lld%% · %lu found%@	正在扫描 inode…%lld%% · 已找到 %lu 个%@
+Search too large	搜索内容过大
+Select Backups	选择备份
+Select app caches or Crash Logs to see the deletion scope. No backup is kept.	选择应用缓存或崩溃日志以查看删除范围。不保留备份。
+Some items could not be removed (see Log)	部分项目无法删除（请查看日志）
+Some items remain in %@; keep the app closed and try again	仍有部分项目留在 %@；请保持应用关闭，然后重试
+Source and destination are the same file	源文件与目标文件是同一文件
+Source and destination trees overlap or have invalid paths	源目录树与目标目录树重叠或路径无效
+Stopped. Freed %@.%@	已停止。已释放 %@。%@
+Stopping after the current item…	将在当前项目后停止…
+Strings over 64 KB can't be edited in this editor.	此编辑器中无法编辑超过 64 KB 的字符串。
+Symbolic links are not followed for viewing, sharing or editing.	查看、分享或编辑时不跟随软链接。
+Tap an app to back up, restore or clear its Documents and Library. Close the app first (swipe it away in the app switcher); operations are not snapshot-consistent while it runs. 	点按应用可备份、恢复或清空其 Documents 和 Library。请先关闭该应用（在应用切换器中上滑关闭）；运行时操作无法保证快照一致性。
+The app container changed while the backup was being finalized	备份即将完成时应用容器发生了变化
+The app container identity no longer matches the selected app	应用容器标识与所选应用不再匹配
+The app container no longer exists or is not a directory	应用容器不存在或不是目录
+The app container was replaced after it was scanned	应用容器在扫描后被替换
+The app data changed while it was being backed up; no snapshot-consistent copy was made	备份过程中应用数据发生了变化，未生成快照一致的副本
+The app identifier is not a valid bundle identifier	应用标识符不是有效的 Bundle ID
+The backup contains an unexpected item: %@	备份包含意外项目：%@
+The backup folder cannot be read	无法读取备份文件夹
+The backup folder is missing	备份文件夹缺失
+The backup has no hash for %@	备份没有 %@ 的哈希值
+The backup is not safe to restore (%@). Nothing was changed.	该备份恢复不安全（%@），未做任何更改。
+The backup manifest does not match the on-disk parts	备份清单与磁盘上的部分不匹配
+The backup manifest is invalid	备份清单无效
+The backup manifest is not a regular file	备份清单不是常规文件
+The backup part %@ cannot be read: %@	无法读取备份部分 %@：%@
+The backup part %@ is not a directory	备份部分 %@ 不是目录
+The backup path is outside this app's backup folder	备份路径在此应用的备份文件夹之外
+The backup's %@ contents changed after it was created	备份的 %@ 内容在创建后发生了变化
+The container identity is unavailable or changed. Backup, restore and clear are disabled for this entry.	容器标识不可用或已更改，此条目的备份、恢复和清空功能已禁用。
+The copied tree could not be verified (the source changed or the copy is incomplete)	无法验证复制的目录树（源已更改或复制不完整）
+The current file version is unavailable. Reopen the file before saving again.	当前文件版本不可用，请重新打开文件后再保存。
+The edited property list contains an unsupported value.	编辑后的属性列表包含不受支持的值。
+The file is empty or its size is still loading.	文件为空或大小仍在加载。
+The file version could not be verified. Close and reopen it before saving.	无法验证文件版本，请关闭并重新打开后再保存。
+The legacy backup cannot be read	无法读取旧版备份
+The legacy backup contains an unexpected item: %@	旧版备份包含意外项目：%@
+The legacy backup is empty. Nothing was changed.	旧版备份为空，未做任何更改。
+The path is invalid or belongs to backup storage.	路径无效或属于备份存储。
+The recovery journal could not be written	无法写入恢复记录
+The restore finished, but its recovery journal could not be committed (%@)	还原已完成，但其恢复记录无法提交（%@）
+The restore paths are not inside this app's backup folder	还原路径不在此应用的备份文件夹内
+The safety backup has no typed manifest	安全备份没有类型化清单
+The selected app container is no longer safe to use (%@). Nothing was changed.	所选应用容器已不再安全（%@），未做任何更改。
+The selected backup changed before restore	选中的备份在还原前发生了变化
+The selected backup changed during restore	选中的备份在还原过程中发生了变化
+The serialized property list could not be validated.	无法验证序列化后的属性列表。
+The serialized property list is too large (maximum %lu MiB).	序列化后的属性列表过大（上限 %lu MiB）。
+The source changed while it was being copied	复制过程中源发生了变化
+The source changed while it was copied	复制时源发生了变化
+The target path was replaced during writing	写入过程中目标路径被替换
+This permanently removes %lu complete backup%@ and everything inside them. It cannot be undone.	这将永久删除 %lu 个完整备份%@及其中的全部内容，且无法撤销。
+This row has incomplete access or identity information. Scan again while the app is closed, or use its file browser entry to inspect it.	此行的访问或身份信息不完整。请在应用关闭时重新扫描，或通过其文件浏览器条目查看。
+Use at most 1 MiB of UTF-8 search input.	UTF-8 搜索输入最多使用 1 MiB。
+Value too large	值过大
+WQ Files does not follow symbolic links for viewing, sharing or editing.	WQ Files 在查看、分享或编辑时不跟随软链接。
+WQ Files does not follow symbolic links for viewing, sharing or editing. Use Copy Path to open the target explicitly.	WQ Files 在查看、分享或编辑时不跟随软链接。请使用“复制路径”显式打开目标。
+finding app containers	正在查找应用容器
+invalid manifest	清单无效
+limited rows are excluded; the remaining rows can still be cleaned	已排除访问受限的行；其余行仍可清理。
+read only	只读
+read only · writing is not supported	只读 · 不支持写入
+size unavailable	大小不可用
+size unavailable · %@%@	大小不可用 · %@%@
+%@ changed while it was read	%@ 在读取时发生了变化
+An interrupted restore is still active. Recover or discard it before starting another restore	仍有未完成的中断还原，请先恢复或放弃它，再开始新的还原
+Cannot encode %@	无法编码 %@
+Cannot inspect %@	无法检查 %@
+Cannot inspect link %@	无法检查链接 %@
+The backup manifest belongs to another app	该备份清单属于其他应用
+The backup manifest contains an invalid or duplicate part	备份清单包含无效或重复的部分
+The backup manifest format is unsupported	备份清单格式不受支持
+The backup manifest has an invalid part hash	备份清单的部分哈希值无效
+The backup manifest has no valid creation timestamp	备份清单没有有效的创建时间戳
+The backup manifest hashes are malformed	备份清单哈希值格式错误
+The backup manifest hashes do not match its parts	备份清单哈希值与其部分不匹配
+The backup manifest is not a dictionary	备份清单不是字典
+The backup manifest is not marked complete	备份清单未标记为已完成
+The backup manifest parts are malformed	备份清单部分格式错误
+The backup manifest reason is malformed	备份清单原因格式错误
+The backup manifest sequence is malformed	备份清单序列格式错误
+The existing restore recovery journal has an unknown state	现有还原恢复记录的状态未知
+A dictionary key is not a string.	字典键不是字符串。
+The property list contains a nil value.	属性列表包含 nil 值。
+The property list contains an unsupported value.	属性列表包含不受支持的值。
+ … (%lu chars)	 …（%lu 个字符）

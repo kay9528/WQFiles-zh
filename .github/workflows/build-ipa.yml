@@ -1,0 +1,37 @@
+# Builds the unsigned WQFiles.ipa (Chinese build, 0.7-zh1) on a macOS runner.
+# Trigger: push to main, or manual Run workflow. The IPA is uploaded as a
+# workflow artifact (not a release); download it from the run's Artifacts.
+name: Build IPA (Chinese)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show Xcode and SDK
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-path
+      - name: Run unit tests
+        run: ./tests/run_tests.sh
+      - name: Build IPA
+        run: ./build.sh
+      - name: Verify IPA
+        run: |
+          ls -lh WQFiles.ipa
+          unzip -l WQFiles.ipa
+          unzip -p WQFiles.ipa Payload/WQFiles.app/Info.plist > /tmp/WQFiles-Info.plist
+          plutil -convert xml1 /tmp/WQFiles-Info.plist
+          /usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" /tmp/WQFiles-Info.plist
+          /usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" /tmp/WQFiles-Info.plist
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: WQFiles-zh-ipa
+          path: WQFiles.ipa
+          retention-days: 30
